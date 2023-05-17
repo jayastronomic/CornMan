@@ -2,10 +2,16 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    ViewData["CSSPage"] = "/css/Index.css";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="home-container">
+    <div id="map"></div>
 </div>
+
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvu9oFpTYO93ZjSo8dThazKNEdJqpw2Jk&callback=initMap">
+</script>
+
 

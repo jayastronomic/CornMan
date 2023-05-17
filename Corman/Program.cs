@@ -1,7 +1,15 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Corman.Data;
+using Microsoft.EntityFrameworkCore;
+
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<CornManContext>(
+    opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("CornManDb"))
+);
 
 var app = builder.Build();
 
